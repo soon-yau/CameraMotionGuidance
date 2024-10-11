@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Camera Motion Guidance">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="https://www.linkedin.com/in/soonyau/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/9_texture_transfer.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="generative AI, computer vision, diffusion models, video diffusion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Boosting Camera Motion Control for Video Diffusion Transformers</title>
+  <link rel="icon" type="image/x-icon" >
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+ 
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Boosting Camera Motion Control for Video Diffusion Transformers</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=dRot7GUAAAAJ&hl=en" target="_blank">Soon Yau Cheong <sup>1,2</sup></SUB></a>
+                  <a href="https://www.linkedin.com/in/soonyau"><img src="static/images/LI-In-Bug.png" alt="Linkedin Icon" width="24" height="24"></a>
+                  <a href="https://scholar.google.com/citations?user=56Kj2QoAAAAJ&hl=en" target="_blank">   , Duygu Ceylan <sup>2</sup>  </a>
+                  <a href="https://scholar.google.com/citations?user=0xOHqkMAAAAJ&hl=en" target="_blank">   , Armin Mustafa <sup>1</sup> </a>
+                    <a href="https://scholar.google.com/citations?user=NNhnVwoAAAAJ&hl=en" target="_blank">   , Andrew Gilbert <sup>1</sup></a>      
+                    <a href="https://scholar.google.com/citations?user=LphRgywAAAAJ" target="_blank">   , Chun-Hao Paul Huang <sup>2</sup></span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">University of Surrey<sup>1</sup>. Adobe Research<sup>2</sup>. <br>October, 2024</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2312.03154" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark"
+                        style="pointer-events: none;">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                      </span>
+                      <span class="link-block">
+                        <a href="https://github.com/soon-yau/" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark"
+                        style="pointer-events: none;">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                      </a>
+                      </span>    
+                    </div>   
+                 </div>
+          <!-- <span> Let us know if Demo link is not running.</span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <span><b>TL;DR: </b> Existing camera control methods do not work for diffusion transformers. Our method, based on classifier-free guidance, restore controllability and boost motion by over 400% </span>
+       <!--<div class="publication-video">
+
+        <iframe src="https://www.youtube.com/embed/J2QYb2F-sxg" frameborder="0" allow="autoplay; encrypted-media" ></iframe>
+      </div>      
+    -->
+     <!-- <video poster="" id="tree" autoplay muted controls controlsList="nofullscreen"   height="100%">
+        <source src="static/videos/visconet_banner_full.mp4"
+        type="video/mp4">
+      </video> -->
+      
+      <h2 class="subtitle has-text-centered">
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent advancements in diffusion models have significantly enhanced the quality of video generation. However, fine-grained control over camera pose remains a challenge. While U-Net-based models have shown promising results for camera control, transformer-based diffusion models (DiT)—the preferred architecture for large-scale video generation—suffer from severe degradation in camera motion accuracy. In this paper, we investigate the underlying causes of this issue and propose solutions tailored to DiT architectures. Our study reveals that camera control performance depends heavily on the choice of conditioning methods rather than camera pose representations that is commonly believed. To address the persistent motion degradation in DiT, we introduce Camera Motion Guidance (CMG), based on classifier-free guidance, which boosts camera control by over 400%. Additionally, we present a sparse camera control pipeline, significantly simplifying the process of specifying camera poses for long videos. Our method universally applies to both U-Net and DiT models, offering improved camera control for video generation tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{cheong2024cmg,
+        author    = {Cheong, Soon Yau and Mustafa, Armin and Ceylan Duygu nd Gilbert, Andrew and Huang, Chun-ao Paul},
+        title     = {Boosting Camera Motion Control for Video Diffusion Transformers},
+        journal   = {Arxiv Preprint 2312.03154},
+        month     = {October},
+        year      = {2024}}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
