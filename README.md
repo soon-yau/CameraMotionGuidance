@@ -3,8 +3,18 @@
 
 ## Install
 ```
-git clone https://github.com/soon-yau/apex.git
-pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+sudo apt-get install git-lfs libgl1 -y
+conda create -n cmg python=3.10
+conda activate cmg
+conda install pytorch==2.1.0 torchvision==0.16.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install xformers==0.0.22.post7
+pip install packaging ninja
+pip install flash-attn --no-build-isolation
+
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" git+https://git.azr.adobeitc.com/scheong/apex 
+
+pip install -v .
+
 ```
 
 ## Inference
@@ -14,10 +24,10 @@ pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation -
 ## Citation
 
 ```bibtex
-@software{opensora,
-  author = {Soon Yau Cheong and Chun-Hao Paul Huang and Duygu Ceylan and Armin Mustafa and Andew Gilbert},
-  title = {Boosting Camera Motion Control for Video Diffusion Transformers},
-  month = {October},
-  year = {2024},
-}
+        @article{cheong2024cmg,
+        author    = {Cheong, Soon Yau and Mustafa, Armin and Ceylan, Duygu and Gilbert, Andrew and Huang, Chun-hao Paul},
+        title     = {Boosting Camera Motion Control for Video Diffusion Transformers},
+        journal   = {Arxiv Preprint 2410.10802},
+        month     = {October},
+        year      = {2024}}
 ```
