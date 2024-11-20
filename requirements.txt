@@ -10,6 +10,9 @@ tensorboard
 timm
 tqdm
 transformers==4.40.0
+xformers==0.0.22.post7
+packaging
+ninja
 wandb
 gradio==4.27.0
 spaces

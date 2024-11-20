@@ -7,11 +7,10 @@ sudo apt-get install git-lfs libgl1 -y
 conda create -n cmg python=3.10
 conda activate cmg
 conda install pytorch==2.1.0 torchvision==0.16.0 pytorch-cuda=12.1 -c pytorch -c nvidia
-pip install xformers==0.0.22.post7
-pip install packaging ninja
-pip install flash-attn --no-build-isolation
 
-pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" git+https://git.azr.adobeitc.com/scheong/apex 
+pip install -r requirements.txt
+pip install flash-attn --no-build-isolation
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" git+https://github.com/soon-yau/apex
 
 pip install -v .
 
