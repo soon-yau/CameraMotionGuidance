@@ -18,6 +18,7 @@ conda activate cmg
 # the command below is for CUDA 12.1, choose install commands from 
 # https://pytorch.org/get-started/locally/ based on your own CUDA version
 #pip3 install torch torchvision
+conda install -c nvidia cuda-toolkit=12.1
 pip install torch==2.3.1 torchvision==0.18.1 --index-url https://download.pytorch.org/whl/cu121
 
 # install flash attention (optional)
@@ -42,6 +43,11 @@ After installation, we suggest reading [structure.md](docs/structure.md) to lear
 
 ## Inference
 1. Download model folder e.g. /cameratrlcmg from https://huggingface.co/soonyau/cmg/tree/main to "./models"
+```
+git clone --depth 1 --filter=blob:none --sparse https://huggingface.co/soonyau/cmg models
+cd models
+git sparse-checkout set cameractrlcmg
+```
 2. Run the script and pass in the model path e.g. `bash scripts/inference.sh models/cameractrlcmg`. Change camera pose and text prompt in config.py in model path.
 
 ## Citation

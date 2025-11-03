@@ -1,11 +1,12 @@
 colossalai==0.3.6
 accelerate==0.29.3
 diffusers==0.27.2
+huggingface_hub==0.20.2
 ftfy
 gdown
 mmengine==0.10.3
 pre-commit
-pyav
+# pyav
 tensorboard
 timm
 tqdm
