@@ -3,6 +3,20 @@
 
 Project Page: https://soon-yau.github.io/CameraMotionGuidance/
 
+Existing camera control methods for U-Net do not work for diffusion transformers. We developed the first camera control for space-time diffuser transformer. Our method, based on classifier-free guidance, restore controllability and boost motion by over 400%.
+
+### 🚀 Camera Motion Guidance
+ Conventionally, no guidance is used in Classifier-free guidance (CFG) or camera condition is supplied without a motion reference.  In training, we randomly set some video be static (repeat first frame to whole sequence) and all-zeros camera condition, which we use as null motion reference. Then we use a seperate camera guidance term to allow for control independent to text conditioning.
+
+$$
+\begin{aligned}
+\hat{e_{\theta}}(z_t, C_T, C_C) &= e_{\theta}(z_t, \emptyset_T, \emptyset_C) \\
+&\quad + s_T \{ e_{\theta}(z_t, C_T, \emptyset_C) - e_{\theta}(z_t, \emptyset_T, \emptyset_C) \} \\
+&\quad + s_C \{ e_{\theta}(z_t, C_T, C_C) - e_{\theta}(z_t, C_T, \emptyset_C) \}
+\end{aligned}
+$$
+
+
 ### 🎥 Conditioning Camera Poses
 
 <p>Conditioning camera poses.</p>
@@ -56,6 +70,9 @@ Project Page: https://soon-yau.github.io/CameraMotionGuidance/
   <img src="supplementary/1_Method_Comparison_files/061.gif" alt="Ours sample 061" width="18%">
   <img src="supplementary/1_Method_Comparison_files/064.gif" alt="Ours sample 064" width="18%">
 </p>
+
+
+
 
 ## Citation
 ```bibtex
