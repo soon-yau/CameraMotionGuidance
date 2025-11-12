@@ -2,6 +2,61 @@
 # Boosting Camera Motion Control for Video Diffusion Transformers
 
 Project Page: https://soon-yau.github.io/CameraMotionGuidance/
+
+### 🎥 Conditioning Camera Poses
+
+<p>Conditioning camera poses.</p>
+
+<p align="center">
+  <img src="supplementary/1_Method_Comparison_files/000.png" alt="Pose 000" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/001.png" alt="Pose 001" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/002.png" alt="Pose 002" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/003.png" alt="Pose 003" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/004.png" alt="Pose 004" width="18%">
+</p>
+
+---
+
+### ⚠️ MotionCtrl in DiT — *Uncontrollable Motion*
+
+<p>MotionCtrl method in DiT has uncontrollable motion.</p>
+
+<p align="center">
+  <img src="supplementary/1_Method_Comparison_files/050.gif" alt="MotionCtrl sample 050" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/053.gif" alt="MotionCtrl sample 053" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/056.gif" alt="MotionCtrl sample 056" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/059.gif" alt="MotionCtrl sample 059" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/062.gif" alt="MotionCtrl sample 062" width="18%">
+</p>
+
+---
+
+### 🚧 CameraCtrl in DiT — *Limited Motion*
+
+<p>CameraCtrl method in DiT has limited motion.</p>
+
+<p align="center">
+  <img src="supplementary/1_Method_Comparison_files/051.gif" alt="CameraCtrl sample 051" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/054.gif" alt="CameraCtrl sample 054" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/057.gif" alt="CameraCtrl sample 057" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/060.gif" alt="CameraCtrl sample 060" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/063.gif" alt="CameraCtrl sample 063" width="18%">
+</p>
+
+---
+
+### 🚀 Our Method — *Restored Controllability and Boosted Motion*
+
+<p>Our method restores camera controllability with boosted motion.</p>
+
+<p align="center">
+  <img src="supplementary/1_Method_Comparison_files/052.gif" alt="Ours sample 052" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/055.gif" alt="Ours sample 055" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/043.gif" alt="Ours sample 043" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/061.gif" alt="Ours sample 061" width="18%">
+  <img src="supplementary/1_Method_Comparison_files/064.gif" alt="Ours sample 064" width="18%">
+</p>
+
 ## Citation
 ```bibtex
         @inproceedings{cheong2024cmg,
