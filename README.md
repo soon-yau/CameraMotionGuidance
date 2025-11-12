@@ -1,62 +1,52 @@
 
 ## Boosting Camera Motion Control for Video Diffusion Transformers
 
-## Install
+# Installtion
+## System
 ```
-git clone https://github.com/soon-yau/apex.git
-pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+pip install uv
+sudo apt update && sudo apt install -y git git-lfs
+git lfs install
 ```
 
-## Installation
+## Environment
+```
+uv python install 3.10
+uv sync
 
-```bash
-# create a virtual env
-conda create -n cmg python=3.10
-conda activate cmg
+# (Optional) Add acceleration extras. Do not currently work now.
+# uv sync --extra flash --extra xformers --extra apex
 
-# install torch
-# the command below is for CUDA 12.1, choose install commands from 
-# https://pytorch.org/get-started/locally/ based on your own CUDA version
-#pip3 install torch torchvision
-conda install -c nvidia cuda-toolkit=12.1
-pip install torch==2.3.1 torchvision==0.18.1 --index-url https://download.pytorch.org/whl/cu121
+source .venv/bin/activate 
 
-# install flash attention (optional)
-pip install packaging ninja
-pip install flash-attn --no-build-isolation
-
-# install apex (optional)
-pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" git+https://github.com/NVIDIA/apex.git
-
-# install xformers
-pip install -U xformers==0.0.26.post1 --index-url https://download.pytorch.org/whl/cu121
-#pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu121
-
-# install this project
-git clone https://github.com/hpcaitech/Open-Sora
-cd Open-Sora
-pip install -v .
 ```
 
 After installation, we suggest reading [structure.md](docs/structure.md) to learn the project structure and how to use the config files.
 
 
-## Inference
+# Inference
+# Download models
 1. Download model folder e.g. /cameratrlcmg from https://huggingface.co/soonyau/cmg/tree/main to "./models"
 ```
-git clone --depth 1 --filter=blob:none --sparse https://huggingface.co/soonyau/cmg models
-cd models
-git sparse-checkout set cameractrlcmg
+MODEL_NAME="cameractrlcmg"
+huggingface-cli download soonyau/cmg --repo-type=model --local-dir ./models/${MODEL_NAME}$ --include "${MODEL_NAME}$/*"
 ```
+Go to config.py and disable all acceleration optimization
+```
+    enable_flashattn=False,
+    enable_layernorm_kernel=False,
+    
+    shardformer=False,
+
+```
+
 2. Run the script and pass in the model path e.g. `bash scripts/inference.sh models/cameractrlcmg`. Change camera pose and text prompt in config.py in model path.
 
 ## Citation
-
 ```bibtex
-@software{opensora,
-  author = {Soon Yau Cheong and Chun-Hao Paul Huang and Duygu Ceylan and Armin Mustafa and Andew Gilbert},
-  title = {Boosting Camera Motion Control for Video Diffusion Transformers},
-  month = {October},
-  year = {2024},
-}
+        @inproceedings{cheong2024cmg,
+        author    = {Cheong, Soon Yau and Mustafa, Armin and Ceylan, Duygu and Gilbert, Andrew and Huang, Chun-hao Paul},
+        title     = {Boosting Camera Motion Control for Video Diffusion Transformers},
+        booktitle = {Proceedings of the British Machine Vision Conference (BMVC)},
+        year      = {2025}}
 ```

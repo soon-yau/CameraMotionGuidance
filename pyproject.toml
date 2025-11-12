@@ -1,0 +1,68 @@
+[project]
+name = "open-sora-env"
+version = "0.1.0"
+description = "Environment for Open-Sora with CUDA 12.1 PyTorch wheels"
+readme = "README.md" 
+requires-python = ">=3.10,<3.11"
+
+# Core runtime deps (mirrors your requirements.txt pins)
+dependencies = [
+  "colossalai==0.3.6",
+  "accelerate==0.29.3",
+  "diffusers==0.27.2",
+  "huggingface_hub==0.20.2",
+  "ftfy",
+  "gdown",
+  "mmengine==0.10.3",
+  "pre-commit",
+  "tensorboard",
+  "timm",
+  "tqdm",
+  "transformers==4.40.0",
+  "wandb",
+  "gradio==4.27.0",
+  "spaces",
+  "opencv-python==4.9.0.80",
+  "netvision",
+  "av==13.1.0",
+  # Torch stack (CUDA 12.1 wheels)
+  "torch==2.3.1",
+  "torchvision==0.18.1",
+  "xformers==0.0.27",
+]
+
+[project.optional-dependencies]
+# Install with: uv sync --extra flash
+flash = [
+  # If you build flash-attn from source, these help
+  "packaging",
+  "ninja",
+  "flash-attn",
+]
+
+[tool.uv.extra-build-dependencies]
+apex = ["torch==2.3.1", "setuptools"]
+
+# Make torch/xformers pull from the CUDA 12.1 wheel index
+[tool.uv.sources]
+torch = { index = "pytorch-cu121" }
+torchvision = { index = "pytorch-cu121" }
+xformers = { index = "pytorch-cu121" }
+
+# Register the PyTorch CUDA 12.1 index (others come from PyPI)
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url  = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+# If you hit build issues with source packages, you can selectively
+# disable build isolation for them (uncomment as needed).
+# [tool.uv]
+# no-build-isolation-package = ["flash-attn", "apex"]
+
+# If (and only if) you want to install THIS repo as a package (editable)
+# define a minimal build system and keep your own package metadata here.
+# Otherwise, you can omit this section and use `uv pip install -e .` directly.
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
