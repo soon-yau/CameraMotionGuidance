@@ -42,6 +42,7 @@ flash = [
 
 [tool.uv.extra-build-dependencies]
 apex = ["torch==2.3.1", "setuptools"]
+flash-attn = ["torch==2.3.1"]
 
 # Make torch/xformers pull from the CUDA 12.1 wheel index
 [tool.uv.sources]
