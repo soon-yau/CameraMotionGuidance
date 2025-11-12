@@ -1,6 +1,6 @@
 
 # Boosting Camera Motion Control for Video Diffusion Transformers
-
+Accepted into BMVC 2025.
 Project Page: https://soon-yau.github.io/CameraMotionGuidance/
 
 Existing camera control methods for U-Net do not work for diffusion transformers. We developed the first camera control for space-time diffuser transformer. Our method, based on classifier-free guidance, restore controllability and boost motion by over 400%.
@@ -83,7 +83,7 @@ $$
         year      = {2025}}
 ```
 
-## Installtion
+## Installation
 ```
 pip install uv
 uv python install 3.10
